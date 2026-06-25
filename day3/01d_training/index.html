@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Offline training of the learned surface roughness · Bjerknes Workshop Tutorials</title><meta name="title" content="Offline training of the learned surface roughness · Bjerknes Workshop Tutorials"/><meta property="og:title" content="Offline training of the learned surface roughness · Bjerknes Workshop Tutorials"/><meta property="twitter:title" content="Offline training of the learned surface roughness · Bjerknes Workshop Tutorials"/><meta name="description" content="Documentation for Bjerknes Workshop Tutorials."/><meta property="og:description" content="Documentation for Bjerknes Workshop Tutorials."/><meta property="twitter:description" content="Documentation for Bjerknes Workshop Tutorials."/><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../search_index.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">Bjerknes Workshop Tutorials</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li class=""><a class="tocitem" href="../../">Home</a><ul class="internal"><li><a class="tocitem" href="#Tutorials-by-day"><span>Tutorials by day</span></a></li><li><a class="tocitem" href="#Run-status"><span>Run status</span></a></li></ul></li><li><span class="tocitem">Day 1 — Julia and interactive Earth system modeling</span><ul><li><a class="tocitem" href="../../day1/01_intro_interactive_climate/">Interactive Climate Modelling Basics with SpeedyWeather.jl (and Oceananigans.jl)</a></li><li><a class="tocitem" href="../../day1/02_oceananigans_baroclinic_adjustment/">Mesoscale eddies: baroclinic instability in a channel</a></li><li><a class="tocitem" href="../../day1/03_capsizing_iceberg/">Implementing new physics: a capsizing iceberg</a></li><li><a class="tocitem" href="../../day1/04_optional_hydrostatic_internal_tide/">Hydrostatic ocean modeling: internal tides over a sill</a></li><li><a class="tocitem" href="../../day1/05_optional_gpu_computing/">GPU computing in Julia: from arrays to a turbulence solver</a></li><li><a class="tocitem" href="../../day1/06_breeze_tutorial/">A first taste of the atmosphere: from a thermal bubble to mountain drizzle</a></li></ul></li><li><span class="tocitem">Day 2 — Realistic simulations using Julia</span><ul><li><a class="tocitem" href="../../day2/01_arctic_sea_ice/">Sea ice in the Arctic: a pan-Arctic simulation over a slab ocean</a></li><li><a class="tocitem" href="../../day2/02_barents_sea_regional/">The Barents Sea: a regional coupled ocean–sea ice simulation</a></li></ul></li><li><span class="tocitem">Day 3 — Hybrid physics &amp; differentiable ESMs</span><ul><li><a class="tocitem" href="../../day3/01a_hybrid_ml_introduction/">Hybrid ML Example: Learning a surface roughness parameterization</a></li><li><a class="tocitem" href="../../day3/01b_preprocessing/">Preprocessing: global NetCDF fields -&gt; column-wise Zarr store prepared for dataloaders</a></li><li><a class="tocitem" href="../../day3/01c_dataloaders/">Dataloaders</a></li><li><a class="tocitem" href="../../day3/01d_training/">Offline training of the learned surface roughness</a></li><li><a class="tocitem" href="../../day3/01e_parameterization/">Defining the learned parameterization</a></li><li><a class="tocitem" href="../../day3/01f_run_parameterization/">Running the learned parameterization in SpeedyWeather.jl</a></li><li><a class="tocitem" href="../../day3/01g_run_pangaea/">Generalisability: the learned roughness on Pangaea</a></li><li><a class="tocitem" href="../../day3/01h_run_parameterization_gpu/">Running the learned parameterization on the GPU</a></li><li><a class="tocitem" href="../../day3/02_differentiable_esms/">Differentiable Earth-system models (placeholder)</a></li></ul></li><li><span class="tocitem">Day 4 — Boundary heterogeneity &amp; turbulence</span><ul><li><a class="tocitem" href="../../day4/07_intro_coupled_convection/">Two fluids, one interface: a warm ocean filament drives 2D coupled convection</a></li><li><a class="tocitem" href="../../day4/01_atmospheric_turbulence_over_a_sea_ice_lead/">A crack in the ice: atmospheric turbulence over a sea-ice lead</a></li><li><a class="tocitem" href="../../day4/02_ocean_turbulence_below_a_lead_with_surface_waves/">Beneath the crack: ocean turbulence, brine rejection, and wave-driven Langmuir structures</a></li><li><a class="tocitem" href="../../day4/08_coupled_warm_filament/">A warm filament writes a cloud street: 3D coupled air–sea LES</a></li><li><a class="tocitem" href="../../day4/03_norway_100m_prescribed_fluxes/">Steep island mountains as boundary conditions: 100 m coupled air–land flow over Lofoten</a></li><li><a class="tocitem" href="../../day4/04_gallery_and_discussion/">Thursday gallery and discussion</a></li><li><a class="tocitem" href="../../day4/99_smoke_case/">Smoke case: a tiny end-to-end exercise of the deployment pipeline</a></li><li><a class="tocitem" href="../../day4/09_global_ocean/">NumericalEarth: a realistic global ocean–sea ice simulation</a></li></ul></li><li><span class="tocitem">Day 5 — Physical insights from biogeochemistry</span><ul><li><a class="tocitem" href="../../day5/01_npzd_box/">NPZD box model: the basics of biogeochemical modelling</a></li><li><a class="tocitem" href="../../day5/02_column/">Column biogeochemistry: the LOBSTER model</a></li><li><a class="tocitem" href="../../day5/03_baroclinic_adjustement/">Upwelling: how resolution effects biogeochemical models</a></li><li><a class="tocitem" href="../../day5/03b_baroclinic_adjustement/">Some whales?</a></li><li class=""><a class="tocitem" href="../../day5/04_regional/">The Barents Sea with Biogeochemistry: Nutrients, Detritus, and Carbon</a><ul class="internal"><li><a class="tocitem" href="#Output"><span>Output</span></a></li></ul></li></ul></li><li><span class="tocitem">Run status</span><ul><li><a class="tocitem" href="../../status/">Overview</a></li><li><a class="tocitem" href="../../status/day1/">Day 1</a></li><li><a class="tocitem" href="../../status/day2/">Day 2</a></li><li><a class="tocitem" href="../../status/day3/">Day 3</a></li><li><a class="tocitem" href="../../status/day4/">Day 4</a></li><li><a class="tocitem" href="../../status/day5/">Day 5</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Day 3 — Hybrid physics &amp; differentiable ESMs</a></li><li class="is-active"><a href>Offline training of the learned surface roughness</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Offline training of the learned surface roughness</a></li></ul></nav><div class="docs-right"><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Offline-training-of-the-learned-surface-roughness"><a class="docs-heading-anchor" href="#Offline-training-of-the-learned-surface-roughness">Offline training of the learned surface roughness</a><a id="Offline-training-of-the-learned-surface-roughness-1"></a><a class="docs-heading-anchor-permalink" href="#Offline-training-of-the-learned-surface-roughness" title="Permalink"></a></h1><p>Now, that we have code for the dataloaders, we can train the column-wise MLP of <code>LearnedSurfaceRoughness</code>. We first actually load the data, then we set up the model and train it offline.</p><pre><code class="language-julia hljs">using Lux, Optimisers, Zygote, ADTypes, Random, Printf, JLD2, CUDA, cuDNN
+using MLDataDevices: cpu_device, gpu_device
+using Lux: Training
+
+include(joinpath(@__DIR__, &quot;01c_dataloaders.jl&quot;))</code></pre><h2 id="Data-configuration"><a class="docs-heading-anchor" href="#Data-configuration">Data configuration</a><a id="Data-configuration-1"></a><a class="docs-heading-anchor-permalink" href="#Data-configuration" title="Permalink"></a></h2><p>Here, we set everything needed for our dataloaders and some general configuration</p><pre><code class="language-julia hljs">zarr_path  = &quot;/cluster/projects/nn9984k/speedy-data/era5-roughness.zarr&quot; # preprocessed store
+batchsize  = 4096
+split      = 0.9        # fraction of samples used for training
+seed       = 0          # RNG seed for reproducible init &amp; shuffles
+use_gpu    = true       # true -&gt; train on the GPU
+device = use_gpu ? gpu_device(; force = true) : cpu_device()
+rng = Random.Xoshiro(seed)</code></pre><p>Then, actually load the data</p><pre><code class="language-julia hljs">train_loader, val_loader, stats =
+    pointwise_dataloaders(zarr_path; batchsize, split, target_transform = log, rng)</code></pre><h2 id="Model"><a class="docs-heading-anchor" href="#Model">Model</a><a id="Model-1"></a><a class="docs-heading-anchor-permalink" href="#Model" title="Permalink"></a></h2><p>Now, we construct our model, a standard MLP.</p><pre><code class="language-julia hljs">model = Lux.Chain(
+    Lux.Dense(7 =&gt; 32, Lux.leakyrelu),
+    Lux.Dense(32 =&gt; 64, Lux.leakyrelu),
+    Lux.Dropout(0.2),
+    Lux.Dense(64 =&gt; 64, Lux.leakyrelu),
+    Lux.Dropout(0.1),
+    Lux.Dense(64 =&gt; 32, Lux.leakyrelu),
+    Lux.Dense(32 =&gt; 1),
+)</code></pre><h2 id="Training"><a class="docs-heading-anchor" href="#Training">Training</a><a id="Training-1"></a><a class="docs-heading-anchor-permalink" href="#Training" title="Permalink"></a></h2><p>First, we define our training loop. The loop includes an early stopping based on the error on the validation set and a basic monitoring of the loss on the training and validation set that is saved to CSV file for later plotting.</p><p>We also define a few utilities for loading and saving the model.</p><pre><code class="language-julia hljs">&quot;&quot;&quot;
+    train_model(model, train_loader, val_loader=nothing; kwargs...)
+
+Train `model` on the column-wise data with AdamW + (by default) MSE loss, in
+whatever space the target was prepared in by the dataloader (e.g. normalised
+`log` surface roughness).
+
+Keywords
+  * `epochs`, `learning_rate` – max number of epochs and AdamW learning rate.
+  * `lossfn`           – any Lux loss with the `(model, ps, st, (x,y))` signature.
+  * `ad`               – AD backend, `AutoZygote()` by default.
+  * `device`           – `cpu_device()` (default) or `gpu_device()`.
+  * `patience`         – early-stopping patience. Training stops once the
+                         validation loss has not improved (by more than
+                         `min_delta`) for `patience` consecutive epochs, and the
+                         best-validation parameters/states are restored. Active
+                         only when a `val_loader` is given and `patience &gt; 0`.
+  * `min_delta`        – minimum decrease in validation loss that counts as an
+                         improvement.
+  * `history_path`     – if given, the per-epoch train/validation losses are
+                         appended to this CSV file (columns `epoch,train,val`)
+                         and flushed every epoch. Robust to crashes/early
+                         stopping and ready to `tail -f` or plot *during*
+                         training. `nothing` (default) disables the CSV.
+  * `rng`, `verbose`.
+
+Returns `(; train_state, ps, st, history, best_epoch, best_val)` where `ps`/`st`
+are the trained parameters and the **test-mode** states (the best-validation ones
+when early stopping is active, ready to drop into a Lux inference call or the
+`LearnedSurfaceRoughness` scheme), and `history` holds per-epoch train/validation
+losses.
+&quot;&quot;&quot;
+function train_model(model, train_loader, val_loader = nothing;
+        epochs::Int = 50, learning_rate = 1.0f-3, lossfn = MSELoss(), ad = AutoZygote(),
+        device = cpu_device(), patience::Int = 10, min_delta::Real = 0,
+        history_path::Union{Nothing, AbstractString} = nothing,
+        rng::AbstractRNG = Random.default_rng(), verbose = true)
+
+    ps, st = device(Lux.setup(rng, model))
+    train_state = Training.TrainState(model, ps, st, AdamW(learning_rate))
+
+    history = (; train = Float64[], val = Float64[])
+
+    early_stop = patience &gt; 0 &amp;&amp; !isnothing(val_loader)   # need validation to monitor
+    best_val, best_epoch, stale = Inf, 0, 0               # early-stopping bookkeeping
+    best_ps = best_st = nothing                           # snapshot of best weights
+
+    # per-epoch CSV log of the losses, flushed every epoch so it survives a crash
+    # or early stop and can be plotted / `tail -f`&#39;d while training is still running
+    io = isnothing(history_path) ? nothing : open(history_path, &quot;w&quot;)
+    if !isnothing(io)
+        println(io, &quot;epoch,train,val&quot;)
+        flush(io)
+    end
+
+    try
+    for epoch in 1:epochs
+        # --- one pass over the training data ---
+        running, nbatches = 0.0, 0
+        for (x, y) in train_loader
+            x, y = device(x), device(y)
+            _, loss, _, train_state =
+                Training.single_train_step!(ad, lossfn, (x, y), train_state)
+            running += loss
+            nbatches += 1
+        end
+        train_loss = running / max(nbatches, 1)
+        push!(history.train, train_loss)
+
+        # --- validation (no parameter update) ---
+        val_loss = isnothing(val_loader) ? NaN :
+            evaluate(model, train_state.parameters, train_state.states, val_loader; lossfn, device)
+        push!(history.val, val_loss)
+
+        verbose &amp;&amp; @printf(&quot;epoch %4d   train %.5f   val %.5f\n&quot;, epoch, train_loss, val_loss)
+
+        # --- persist the losses for later plotting ---
+        if !isnothing(io)
+            @printf(io, &quot;%d,%.8f,%.8f\n&quot;, epoch, train_loss, val_loss)
+            flush(io)
+        end
+
+        # --- early stopping: track the best epoch and stop when patience runs out ---
+        if early_stop
+            if val_loss &lt; best_val - min_delta
+                best_val, best_epoch, stale = val_loss, epoch, 0
+                best_ps = deepcopy(train_state.parameters)
+                best_st = deepcopy(train_state.states)
+            else
+                stale += 1
+            end
+            if stale &gt;= patience
+                verbose &amp;&amp; @info &quot;early stopping&quot; stopped_at = epoch best_epoch best_val
+                break
+            end
+        end
+    end
+    finally
+        isnothing(io) || close(io)
+    end
+
+    # restore the best-validation weights when early stopping was active
+    out_ps = isnothing(best_ps) ? train_state.parameters : best_ps
+    out_st = isnothing(best_st) ? train_state.states : best_st
+
+    return (; train_state,
+              ps = out_ps,
+              st = Lux.testmode(out_st),
+              history, best_epoch, best_val)
+end
+
+&quot;&quot;&quot;
+    evaluate(model, ps, st, loader; lossfn=MSELoss(), device=cpu_device())
+
+Mean loss over `loader` without updating parameters. States are put in test mode
+so layers like `Dropout` behave deterministically.
+&quot;&quot;&quot;
+function evaluate(model, ps, st, loader; lossfn = MSELoss(), device = cpu_device())
+    st = Lux.testmode(st)
+    running, nbatches = 0.0, 0
+    for (x, y) in loader
+        x, y = device(x), device(y)
+        loss, _, _ = lossfn(model, ps, st, (x, y))
+        running += loss
+        nbatches += 1
+    end
+    return running / max(nbatches, 1)
+end
+
+&quot;&quot;&quot;
+    save_model(path, model, ps, st; stats=nothing, history=nothing)
+
+Save a trained model to `path` (a `.jld2` file) with JLD2. Parameters and states
+are moved to the CPU first so the file is portable across CPU/GPU runs. Pass the
+dataloader `stats` (input/target mean &amp; std) to bundle the normalisation
+constants needed at inference, and the `history` returned by [`train_model`](@ref)
+to keep the per-epoch train/validation loss curves alongside the weights for
+later plotting. Returns `path`.
+&quot;&quot;&quot;
+function save_model(path::AbstractString, model, ps, st; stats = nothing, history = nothing)
+    cdev = cpu_device()
+    jldsave(path; model, parameters = cdev(ps), states = cdev(st), stats, history)
+    return path
+end
+
+&quot;&quot;&quot;
+    load_model(path) -&gt; (; model, parameters, states, stats, history)
+
+Load a model saved with [`save_model`](@ref). The same packages used to build the
+model (e.g. Lux) must be loaded for deserialisation to succeed. `history` is the
+train/validation loss record (or `nothing` for models saved without it).
+&quot;&quot;&quot;
+function load_model(path::AbstractString)
+    data = JLD2.load(path)
+    return (; model = data[&quot;model&quot;],
+              parameters = data[&quot;parameters&quot;],
+              states = data[&quot;states&quot;],
+              stats = data[&quot;stats&quot;],
+              history = get(data, &quot;history&quot;, nothing))
+end</code></pre><h2 id="Now-actually-train-it!"><a class="docs-heading-anchor" href="#Now-actually-train-it!">Now actually train it!</a><a id="Now-actually-train-it!-1"></a><a class="docs-heading-anchor-permalink" href="#Now-actually-train-it!" title="Permalink"></a></h2><p>Now, we actually train our model, save it and plot the training log. First some hyperparameters:</p><pre><code class="language-julia hljs">epochs = 100 # we have a lot of data, we won&#39;t need many
+patience = 10 # early stopping patience
+learning_rate = 1.0f-3
+csv_path = &quot;training_results.csv&quot;
+model_path = &quot;trained_model.jld2&quot;
+plot_path = &quot;learning_curve.png&quot;</code></pre><p>Then, the actual training:</p><pre><code class="language-julia hljs">result = train_model(model, train_loader, val_loader;
+    epochs, learning_rate, patience, device, history_path = csv_path, rng)
+
+@info &quot;training finished&quot; best_epoch = result.best_epoch best_val = result.best_val
+
+(; ps, st, history) =  result
+save_model(model_path, model, ps, st; stats, history)</code></pre><p>Our dataset is actually so big that already within the first epoch we have plateued. Let&#39;s plot the loss curves:</p><pre><code class="language-julia hljs">using CairoMakie
+
+PLOT = false
+if PLOT # hide it away in case we execute this on a compute node without graphics
+    fig = Figure()
+    ax = Axis(fig[1, 1]; xlabel = &quot;epoch&quot;, ylabel = &quot;loss&quot;, yscale = log10, title = &quot;training loss&quot;)
+    lines!(ax, result.history.train; label = &quot;train&quot;)
+    any(!isnan, result.history.val) &amp;&amp; lines!(ax, result.history.val; label = &quot;val&quot;)
+    axislegend(ax)
+    save(plot_path, fig)
+end</code></pre><p>As noted before, we directly plateuaed in the first epoch, the validation error didn&#39;t go up though. While this might look like a problem, we&#39;ll have a look how our results look like at inference time when we integreate it in SpeedyWeather.jl.</p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../01c_dataloaders/">« Dataloaders</a><a class="docs-footer-nextpage" href="../01e_parameterization/">Defining the learned parameterization »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.17.0 on <span class="colophon-date" title="Monday 15 June 2026 09:27">Monday 15 June 2026</span>. Using Julia version 1.12.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Running the learned parameterization on the GPU · Bjerknes Workshop Tutorials</title><meta name="title" content="Running the learned parameterization on the GPU · Bjerknes Workshop Tutorials"/><meta property="og:title" content="Running the learned parameterization on the GPU · Bjerknes Workshop Tutorials"/><meta property="twitter:title" content="Running the learned parameterization on the GPU · Bjerknes Workshop Tutorials"/><meta name="description" content="Documentation for Bjerknes Workshop Tutorials."/><meta property="og:description" content="Documentation for Bjerknes Workshop Tutorials."/><meta property="twitter:description" content="Documentation for Bjerknes Workshop Tutorials."/><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../search_index.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">Bjerknes Workshop Tutorials</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li class=""><a class="tocitem" href="../../">Home</a><ul class="internal"><li><a class="tocitem" href="#Tutorials-by-day"><span>Tutorials by day</span></a></li><li><a class="tocitem" href="#Run-status"><span>Run status</span></a></li></ul></li><li><span class="tocitem">Day 1 — Julia and interactive Earth system modeling</span><ul><li><a class="tocitem" href="../../day1/01_intro_interactive_climate/">Interactive Climate Modelling Basics with SpeedyWeather.jl (and Oceananigans.jl)</a></li><li><a class="tocitem" href="../../day1/02_oceananigans_baroclinic_adjustment/">Mesoscale eddies: baroclinic instability in a channel</a></li><li><a class="tocitem" href="../../day1/03_capsizing_iceberg/">Implementing new physics: a capsizing iceberg</a></li><li><a class="tocitem" href="../../day1/04_optional_hydrostatic_internal_tide/">Hydrostatic ocean modeling: internal tides over a sill</a></li><li><a class="tocitem" href="../../day1/05_optional_gpu_computing/">GPU computing in Julia: from arrays to a turbulence solver</a></li><li><a class="tocitem" href="../../day1/06_breeze_tutorial/">A first taste of the atmosphere: from a thermal bubble to mountain drizzle</a></li></ul></li><li><span class="tocitem">Day 2 — Realistic simulations using Julia</span><ul><li><a class="tocitem" href="../../day2/01_arctic_sea_ice/">Sea ice in the Arctic: a pan-Arctic simulation over a slab ocean</a></li><li><a class="tocitem" href="../../day2/02_barents_sea_regional/">The Barents Sea: a regional coupled ocean–sea ice simulation</a></li></ul></li><li><span class="tocitem">Day 3 — Hybrid physics &amp; differentiable ESMs</span><ul><li><a class="tocitem" href="../../day3/01a_hybrid_ml_introduction/">Hybrid ML Example: Learning a surface roughness parameterization</a></li><li><a class="tocitem" href="../../day3/01b_preprocessing/">Preprocessing: global NetCDF fields -&gt; column-wise Zarr store prepared for dataloaders</a></li><li><a class="tocitem" href="../../day3/01c_dataloaders/">Dataloaders</a></li><li><a class="tocitem" href="../../day3/01d_training/">Offline training of the learned surface roughness</a></li><li><a class="tocitem" href="../../day3/01e_parameterization/">Defining the learned parameterization</a></li><li><a class="tocitem" href="../../day3/01f_run_parameterization/">Running the learned parameterization in SpeedyWeather.jl</a></li><li><a class="tocitem" href="../../day3/01g_run_pangaea/">Generalisability: the learned roughness on Pangaea</a></li><li><a class="tocitem" href="../../day3/01h_run_parameterization_gpu/">Running the learned parameterization on the GPU</a></li><li><a class="tocitem" href="../../day3/02_differentiable_esms/">Differentiable Earth-system models (placeholder)</a></li></ul></li><li><span class="tocitem">Day 4 — Boundary heterogeneity &amp; turbulence</span><ul><li><a class="tocitem" href="../../day4/07_intro_coupled_convection/">Two fluids, one interface: a warm ocean filament drives 2D coupled convection</a></li><li><a class="tocitem" href="../../day4/01_atmospheric_turbulence_over_a_sea_ice_lead/">A crack in the ice: atmospheric turbulence over a sea-ice lead</a></li><li><a class="tocitem" href="../../day4/02_ocean_turbulence_below_a_lead_with_surface_waves/">Beneath the crack: ocean turbulence, brine rejection, and wave-driven Langmuir structures</a></li><li><a class="tocitem" href="../../day4/08_coupled_warm_filament/">A warm filament writes a cloud street: 3D coupled air–sea LES</a></li><li><a class="tocitem" href="../../day4/03_norway_100m_prescribed_fluxes/">Steep island mountains as boundary conditions: 100 m coupled air–land flow over Lofoten</a></li><li><a class="tocitem" href="../../day4/04_gallery_and_discussion/">Thursday gallery and discussion</a></li><li><a class="tocitem" href="../../day4/99_smoke_case/">Smoke case: a tiny end-to-end exercise of the deployment pipeline</a></li><li><a class="tocitem" href="../../day4/09_global_ocean/">NumericalEarth: a realistic global ocean–sea ice simulation</a></li></ul></li><li><span class="tocitem">Day 5 — Physical insights from biogeochemistry</span><ul><li><a class="tocitem" href="../../day5/01_npzd_box/">NPZD box model: the basics of biogeochemical modelling</a></li><li><a class="tocitem" href="../../day5/02_column/">Column biogeochemistry: the LOBSTER model</a></li><li><a class="tocitem" href="../../day5/03_baroclinic_adjustement/">Upwelling: how resolution effects biogeochemical models</a></li><li><a class="tocitem" href="../../day5/03b_baroclinic_adjustement/">Some whales?</a></li><li class=""><a class="tocitem" href="../../day5/04_regional/">The Barents Sea with Biogeochemistry: Nutrients, Detritus, and Carbon</a><ul class="internal"><li><a class="tocitem" href="#Output"><span>Output</span></a></li></ul></li></ul></li><li><span class="tocitem">Run status</span><ul><li><a class="tocitem" href="../../status/">Overview</a></li><li><a class="tocitem" href="../../status/day1/">Day 1</a></li><li><a class="tocitem" href="../../status/day2/">Day 2</a></li><li><a class="tocitem" href="../../status/day3/">Day 3</a></li><li><a class="tocitem" href="../../status/day4/">Day 4</a></li><li><a class="tocitem" href="../../status/day5/">Day 5</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Day 3 — Hybrid physics &amp; differentiable ESMs</a></li><li class="is-active"><a href>Running the learned parameterization on the GPU</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Running the learned parameterization on the GPU</a></li></ul></nav><div class="docs-right"><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Running-the-learned-parameterization-on-the-GPU"><a class="docs-heading-anchor" href="#Running-the-learned-parameterization-on-the-GPU">Running the learned parameterization on the GPU</a><a id="Running-the-learned-parameterization-on-the-GPU-1"></a><a class="docs-heading-anchor-permalink" href="#Running-the-learned-parameterization-on-the-GPU" title="Permalink"></a></h1><p>The column-wise <code>LearnedSurfaceRoughness</code> from <code>parameterization.jl</code> is not GPU-compatible: This is mainly because Lux NN can&#39;t be called within kernel easily but also all columns share a single input buffer (a data race in a parallel kernel) and <code>Lux.apply</code>.</p><p>SpeedyWeather offers a second kind of parameterization for exactly this situation: a <a href="https://speedyweather.github.io/SpeedyWeatherDocumentation/dev/parameterizations">global parameterization</a>. It is called once per time step with the complete state — and is expected to organise its own computation (e.g. launch its own kernels). That is a perfect match for a neural network: we gather the inputs of <em>all</em> grid points into one <code>(7, npoints)</code> matrix, evaluate the network batched in a single <code>Lux.apply</code>, and write the result back with array broadcasts.</p><pre><code class="language-julia hljs">using CUDA, cuDNN              # load the GPU stack first
+using SpeedyWeather, Lux, JLD2, Adapt
+using MLDataDevices: gpu_device</code></pre><h2 id="The-global-scheme"><a class="docs-heading-anchor" href="#The-global-scheme">The global scheme</a><a id="The-global-scheme-1"></a><a class="docs-heading-anchor-permalink" href="#The-global-scheme" title="Permalink"></a></h2><p>The struct mirrors the column-wise version, with one difference: the normalisation constants are stored as plain vectors on the device (ordered like the NN inputs, i.e. like the dataloader <code>stats</code> — no name mapping needed).</p><pre><code class="language-julia hljs">@kwdef struct LearnedSurfaceRoughnessGlobal{NF, V, LNN, LP, LS} &lt;: SpeedyWeather.AbstractSurfaceRoughness
+    &quot;[OPTION] constant roughness length over ocean [m]&quot;
+    roughness_length_ocean::NF = 1.0e-4
+
+    # number of horizontal grid points = batch size of the NN input variable
+    npoints::Int
+
+    # normalisation constants on the device, ordered like the NN input:
+    # [bare_soil, cvh, cvl, z, sd, stl1, swvl1]
+    land_input_mean::V
+    land_input_std::V
+    land_output_mean::NF
+    land_output_std::NF
+
+    # NN structure, parameters and states
+    land_nn::LNN
+    land_params::LP
+    land_states::LS
+end
+
+&quot;&quot;&quot;
+    LearnedSurfaceRoughnessGlobal(SG, land_nn, land_params, land_states, stats; kwargs...)
+
+Construct the global scheme directly from the dataloader `stats` saved by
+`training.jl` — the stats vectors are already in the NN input order. `land_params`
+and `land_states` are expected on the same device the simulation runs on.
+&quot;&quot;&quot;
+function LearnedSurfaceRoughnessGlobal(
+        SG::SpectralGrid, land_nn, land_params, land_states, stats; kwargs...)
+
+    expected = [&quot;bare_soil&quot;, &quot;cvh&quot;, &quot;cvl&quot;, &quot;z&quot;, &quot;sd&quot;, &quot;stl1&quot;, &quot;swvl1&quot;]
+    stats.input_names == expected ||
+        error(&quot;stats.input_names = $(stats.input_names), expected $(expected)&quot;)
+
+    arch = SG.architecture
+    land_input_mean = on_architecture(arch, Float32.(stats.input_mean))
+    land_input_std  = on_architecture(arch, Float32.(stats.input_std))
+
+    return LearnedSurfaceRoughnessGlobal{
+        SG.NF, typeof(land_input_mean),
+        typeof(land_nn), typeof(land_params), typeof(land_states)}(;
+        npoints = SG.npoints,
+        land_input_mean, land_input_std,
+        land_output_mean = stats.target_mean[1],
+        land_output_std = stats.target_std[1],
+        land_nn, land_params, land_states, kwargs...)
+end</code></pre><h2 id="The-input-buffer-as-a-model-variable"><a class="docs-heading-anchor" href="#The-input-buffer-as-a-model-variable">The input buffer as a model variable</a><a id="The-input-buffer-as-a-model-variable-1"></a><a class="docs-heading-anchor-permalink" href="#The-input-buffer-as-a-model-variable" title="Permalink"></a></h2><p>Any model component can declare the variables it needs by extending <code>SpeedyWeather.variables</code>: when the model is initialized, SpeedyWeather allocates them — on the right device, in the grid&#39;s number format — and makes them available in the simulation&#39;s <code>Variables</code> (the <code>vars</code> argument of <code>parameterization!</code>). We use this for the NN input buffer: a matrix variable of size <code>(7, npoints)</code> declared with <code>MatrixDim</code>, which we can later access as <code>vars.parameterizations.nn_input</code>.</p><p>One subtlety: this method <em>replaces</em> the generic <code>variables(::AbstractSurfaceRoughness)</code> method, which declares the three surface-roughness output fields every roughness scheme writes into. So we repeat those three here and add the input buffer as a fourth variable:</p><pre><code class="language-julia hljs">function SpeedyWeather.variables(scheme::LearnedSurfaceRoughnessGlobal)
+    return (
+        ParameterizationVariable(:surface_roughness, SpeedyWeather.Grid2D(),
+            desc = &quot;Surface roughness length&quot;, units = &quot;m&quot;),
+        ParameterizationVariable(:surface_roughness, SpeedyWeather.Grid2D(),
+            desc = &quot;Land surface roughness length&quot;, units = &quot;m&quot;, namespace = :land),
+        ParameterizationVariable(:surface_roughness, SpeedyWeather.Grid2D(),
+            desc = &quot;Ocean surface roughness length&quot;, units = &quot;m&quot;, namespace = :ocean),
+        ParameterizationVariable(:nn_input, SpeedyWeather.MatrixDim(7, scheme.npoints),
+            desc = &quot;NN input buffer (features × grid points)&quot;),
+    )
+end</code></pre><p>One GPU subtlety: SpeedyWeather fuses all <em>column</em> parameterizations into a single GPU kernel and passes the (adapted) model components into it — and kernel arguments must be <code>isbits</code>. A Lux network is not (its Dropout states carry a mutable RNG). But the column kernel never evaluates our network — it only runs in the host-side global pass. So when the scheme is adapted for the kernel we simply strip the network, keeping the lightweight rest:</p><pre><code class="language-julia hljs">function Adapt.adapt_structure(to, scheme::LearnedSurfaceRoughnessGlobal)
+    land_input_mean = Adapt.adapt(to, scheme.land_input_mean)
+    land_input_std  = Adapt.adapt(to, scheme.land_input_std)
+    return LearnedSurfaceRoughnessGlobal{
+        typeof(scheme.land_output_mean), typeof(land_input_mean),
+        Nothing, Nothing, Nothing}(
+        scheme.roughness_length_ocean, scheme.npoints, land_input_mean,
+        land_input_std, scheme.land_output_mean, scheme.land_output_std,
+        nothing, nothing, nothing)
+end
+
+SpeedyWeather.initialize!(::LearnedSurfaceRoughnessGlobal, ::PrimitiveEquation) = nothing</code></pre><h2 id="The-global-parameterization!"><a class="docs-heading-anchor" href="#The-global-parameterization!">The global <code>parameterization!</code></a><a id="The-global-parameterization!-1"></a><a class="docs-heading-anchor-permalink" href="#The-global-parameterization!" title="Permalink"></a></h2><p>A global parameterization implements <code>parameterization!(vars, scheme, model)</code> — without the grid index <code>ij</code> — and runs once per time step outside any kernel, so calling <code>Lux.apply</code> here is perfectly fine. The NN input buffer is the variable we declared above, found in <code>vars</code> alongside all other model variables. Everything is formulated as array broadcasts, which work on CPU arrays and CUDA arrays alike.</p><pre><code class="language-julia hljs">function SpeedyWeather.parameterization!(vars::SpeedyWeather.Variables,
+        scheme::LearnedSurfaceRoughnessGlobal, model::PrimitiveEquation)
+
+    X = vars.parameterizations.nn_input
+    land_vars = vars.parameterizations.land
+    soil = vars.prognostic.land
+
+    # gather the inputs of all grid points, rows ordered like in training
+    @views begin
+        X[2, :] .= land_vars.vegetation_high
+        X[3, :] .= land_vars.vegetation_low
+        X[1, :] .= 1 .- X[2, :] .- X[3, :]              # bare-soil fraction
+        X[4, :] .= vars.grid.geopotential[:, end]       # lowermost layer
+        X[5, :] .= soil.snow_depth
+        X[6, :] .= soil.soil_temperature[:, 1]          # top soil layer
+        X[7, :] .= soil.soil_moisture[:, 1]
+    end
+
+    # normalise all features at once
+    X .= (X .- scheme.land_input_mean) ./ scheme.land_input_std
+
+    # one batched NN evaluation for the whole globe
+    pred, _ = Lux.apply(scheme.land_nn, X, scheme.land_params, scheme.land_states)
+
+    # un-normalise, transform back from log space and write the output fields
+    mask = model.land_sea_mask.mask
+    z₀_land = vars.parameterizations.land.surface_roughness
+    z₀_ocean = vars.parameterizations.ocean.surface_roughness
+    z₀ = scheme.roughness_length_ocean
+
+    # mixing Fields and plain GPU arrays in one broadcast falls back to (slow,
+    # disallowed) scalar indexing — broadcast over the underlying arrays
+    # (`parent`) wherever the raw NN output `pred` is involved
+    parent(z₀_land) .= ifelse.(parent(mask) .&gt; 0,
+        exp.(vec(pred) .* scheme.land_output_std .+ scheme.land_output_mean),
+        zero(z₀))
+    z₀_ocean .= ifelse.(mask .&lt; 1, z₀, zero(z₀))
+    vars.parameterizations.surface_roughness .= mask .* z₀_land .+ (1 .- mask) .* z₀_ocean
+    return nothing
+end</code></pre><p>Two dispatch details make this work inside SpeedyWeather. First, as a global parameterization the column-wise call must explicitly do nothing — otherwise the fused column kernel would try (and fail) to evaluate the scheme per grid point:</p><pre><code class="language-julia hljs">SpeedyWeather.parameterization!(ij, vars, scheme::LearnedSurfaceRoughnessGlobal, model) = nothing</code></pre><p>Second, SpeedyWeather only collects <em>top-level</em> model components for the global pass, and our scheme sits inside the <code>BoundaryLayer</code>. The default global call on a <code>BoundaryLayer</code> is a no-op, so we forward it to our scheme (the drag component has no global part). The global pass runs before the column pass, so the drag — a column parameterization that consumes the surface roughness — always sees the freshly computed fields:</p><pre><code class="language-julia hljs">SpeedyWeather.parameterization!(vars::SpeedyWeather.Variables,
+    BL::BoundaryLayer{&lt;:LearnedSurfaceRoughnessGlobal}, model::PrimitiveEquation) =
+    SpeedyWeather.parameterization!(vars, BL.surface_roughness, model)</code></pre><h2 id="Import-the-trained-model"><a class="docs-heading-anchor" href="#Import-the-trained-model">Import the trained model</a><a id="Import-the-trained-model-1"></a><a class="docs-heading-anchor-permalink" href="#Import-the-trained-model" title="Permalink"></a></h2><p>Same as in the CPU script, except that the parameters and states are moved to the GPU. <code>stats</code> can be passed as-is — no name translation needed.</p><pre><code class="language-julia hljs">trained = JLD2.load(&quot;trained_model.jld2&quot;)
+land_nn = trained[&quot;model&quot;]
+stats   = trained[&quot;stats&quot;]
+
+device = gpu_device()
+land_params = device(trained[&quot;parameters&quot;])
+land_states = device(trained[&quot;states&quot;])    ## test-mode states: dropout disabled</code></pre><h2 id="Run-it-in-a-GPU-simulation"><a class="docs-heading-anchor" href="#Run-it-in-a-GPU-simulation">Run it in a GPU simulation</a><a id="Run-it-in-a-GPU-simulation-1"></a><a class="docs-heading-anchor-permalink" href="#Run-it-in-a-GPU-simulation" title="Permalink"></a></h2><p>Now the same setup as on the CPU, just with the GPU architecture. (Setting <code>arch = SpeedyWeather.CPU()</code> and <code>device = cpu_device()</code> above runs the very same global scheme on the CPU — handy for testing.)</p><pre><code class="language-julia hljs">arch = SpeedyWeather.GPU()
+spectral_grid = SpectralGrid(trunc = 65, architecture = arch)
+
+surface_roughness = LearnedSurfaceRoughnessGlobal(
+    spectral_grid, land_nn, land_params, land_states, stats)
+
+boundary_layer = BoundaryLayer(spectral_grid; surface_roughness)
+model = PrimitiveWetModel(spectral_grid; boundary_layer)
+simulation = initialize!(model)
+run!(simulation, period = Day(20))</code></pre><p>And the same sanity check as before — the surface roughness the network predicted over land, in meters:</p><pre><code class="language-julia hljs">extrema(simulation.variables.parameterizations.land.surface_roughness)</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../01g_run_pangaea/">« Generalisability: the learned roughness on Pangaea</a><a class="docs-footer-nextpage" href="../02_differentiable_esms/">Differentiable Earth-system models (placeholder) »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.17.0 on <span class="colophon-date" title="Monday 15 June 2026 09:27">Monday 15 June 2026</span>. Using Julia version 1.12.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
